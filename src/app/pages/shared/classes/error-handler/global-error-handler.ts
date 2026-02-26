@@ -13,6 +13,7 @@ export class GlobalErrorHandler implements ErrorHandler {
   ) { }
 
   handleError(error: Error) {
+    const isKarma = typeof (window as any).__karma__ !== 'undefined';
     // Do whatever you like with the error (send it to the server?)
     // And log it to the console
 
@@ -39,7 +40,9 @@ export class GlobalErrorHandler implements ErrorHandler {
         } else if (error.status === 404) {
 
         } else if (error.status === 0) {
-          window.location.href = '/assets/static/error.html';
+          if (!isKarma) {
+            window.location.href = '/assets/static/error.html';
+          }
         }
       }
     } else {
