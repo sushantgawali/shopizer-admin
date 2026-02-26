@@ -34,13 +34,13 @@ jobs:
         run: npm run build
 
       - name: Create release archive
-        run: tar -czf shopizer-admin-${{ github.sha }}.tar.gz dist
+        run: tar -czf shopizer-admin.tar.gz dist
 
       - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
           name: shopizer-admin-${{ github.sha }}
-          path: shopizer-admin-${{ github.sha }}.tar.gz
+          path: shopizer-admin.tar.gz
 
       - name: Publish GitHub release
         uses: softprops/action-gh-release@v2
@@ -50,4 +50,4 @@ jobs:
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
           prerelease: true
-          files: shopizer-admin-${{ github.sha }}.tar.gz
+          files: shopizer-admin.tar.gz
