@@ -49,5 +49,4 @@ jobs:
           name: Build ${{ github.run_number }}
           target_commitish: ${{ github.sha }}
           generate_release_notes: true
-          prerelease: true
           files: shopizer-admin.tar.gz
