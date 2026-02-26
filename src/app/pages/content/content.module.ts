@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ContentRoutingModule, routedComponents } from './content-routing.module';
 import { SharedModule } from '../shared/shared.module';
-import { ngfModule } from 'angular-file';
 import { QueryBuilderModule } from "angular2-query-builder";
 import { NbDialogModule } from '@nebular/theme';
 import { NgxDropzoneModule } from 'ngx-dropzone';
@@ -17,7 +16,6 @@ import { CustomModule } from '../custom-component/custom.module';
   imports: [
     ContentRoutingModule,
     SharedModule,
-    ngfModule,
     FileManagerModule,
     QueryBuilderModule,
     NbDialogModule.forChild(),
@@ -27,6 +25,6 @@ import { CustomModule } from '../custom-component/custom.module';
     MalihuScrollbarModule.forRoot(),
     CustomModule
   ],
-  exports: [ngfModule]
+  exports: []
 })
 export class ContentModule { }
